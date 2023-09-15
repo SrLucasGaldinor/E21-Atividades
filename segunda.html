@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Segunda Atividade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+
+    </header>
+
+    <main class="conteudo">
+        <div class="conteudo-principal">
+            <h1 class="conteudo-principal-titulo">Calculadora de Média</h1>
+            <p class="conteudo-principal-informe">Informe as três notas do aluno:</p>
+            <input type="number" id="nota1" placeholder="Nota 1">
+            <input type="number" id="nota2" placeholder="Nota 2">
+            <input type="number" id="nota3" placeholder="Nota 3">
+            <p class="conteudo-principal-informe">Informe a frequência do aluno:</p>
+            <input type="number" id="frequencia" placeholder="Frequência">
+            <button id="verificarBotao">Calcular</button>
+            <p id="resultado"></p>
+        </div>
+
+        <script>
+            document.getElementById('verificarBotao').addEventListener('click', function () {
+                var nota1 = parseFloat(document.getElementById('nota1').value);
+                var nota2 = parseFloat(document.getElementById('nota2').value);
+                var nota3 = parseFloat(document.getElementById('nota3').value);
+                var frequencia = parseFloat(document.getElementById('frequencia').value);
+
+                if (isNaN(nota1) || isNaN(nota2) || isNaN(nota3) || isNaN(frequencia)) {
+                    alert('Por favor, insira valores válidos para as notas e a frequência.');
+                } else if (nota1 < 0 || nota1 > 10 || nota2 < 0 || nota2 > 10 || nota3 < 0 || nota3 > 10 || frequencia < 0 || frequencia > 100) {
+                    alert('As notas devem estar entre 0 e 10, e a frequência deve estar entre 0 e 100.');
+                } else {
+                    var media = (nota1 + nota2 + nota3) / 3;
+                    var situacao = '';
+
+                    if (media >= 6 && frequencia >= 75) {
+                        alert('Aprovado');
+                    } else {
+                        alert('Reprovado');
+                    }
+
+                    document.getElementById('resultado').textContent = `Média: ${media.toFixed(2)} - Situação: ${situacao}`;
+                }
+            });
+        </script>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>

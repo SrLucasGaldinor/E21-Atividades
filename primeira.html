@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeira</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+
+    </header>
+
+    <main class="conteudo">
+        <div class="conteudo-principal">
+            <h1 class="conteudo-principal-titulo">Verificação de Idade</h1>
+            <p class="conteudo-principal-informe">Informe sua idade:</p>
+            <input type="number" id="idadeInput">
+            <button id="verificarBotao">Verificar</button>
+        </div>
+        <script>
+            document.getElementById('verificarBotao').addEventListener('click', function () {
+                var idadeInput = document.getElementById('idadeInput').value;
+
+                if (idadeInput >= 18) {
+                    alert('Acesso Liberado!');
+                } else {
+                    alert('Acesso Negado. Você precisa ter no mínimo 18 anos.');
+                    window.location.href = 'index.html';
+                }
+            });
+        </script>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>

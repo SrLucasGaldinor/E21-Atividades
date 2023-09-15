@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividades E-21</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <a href="index.html"><img class="cabecalho-imagem" src="sua-logo.png" alt="Logomarca"></a>
+        <nav class="cabecalho-menu">
+            <a class="cabecalho-menu-item" href="primeira.html">Atividade 1</a>
+            <a class="cabecalho-menu-item" href="segunda.html">Atividade 2</a>
+            <a class="cabecalho-menu-item" href="terceira.html">Atividade 3</a>
+            <a class="cabecalho-menu-item" href="quarta.html">Atividade 4</a>
+        </nav>
+    </header>
+
+    <main>
+
+    </main>
+
+    <footer class="rodape">
+        <div class="rodape-conteudo">
+            <span class="rodape-copy">Copyright &copy; 2023 - Lucas Galdino</span><br>
+            <a href="https://github.com/SrLucasGaldinor" target="_blank" class="rodape-icons"><i
+                    class="fab fa-github"></i></a>
+            <a href="https://contate.me/lucas-galdino-rosa" target="_blank" class="rodape-icons"><i
+                    class="fab fa-whatsapp"></i></a>
+            <br>
+            <span class="rodape-conteudo-escrito">Insira seu E-Mail e receba atualizações:</span><input type="email"
+                id="emailConteudo" placeholder="Seu E-mail">
+            <button id="inscreverBotao" class="botao-email">Inscrever-se</button>
+        </div>
+
+        <script>
+            document.getElementById('inscreverBotao').addEventListener('click', function () {
+                var emailConteudo = document.getElementById('emailConteudo');
+                var userEmail = emailConteudo.value;
+
+                if (valicaoEmail(userEmail)) {
+                    alert('Obrigado por se Inscrever!');
+                } else {
+                    alert('Por favor, insira um endereço de E-mail válido.');
+                }
+            });
+
+            function valicaoEmail(email) {
+                var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+        </script>
+    </footer>
+</body>
+
+</html>

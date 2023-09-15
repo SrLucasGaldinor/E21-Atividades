@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quarta Atividade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+
+    </header>
+
+    <main class="conteudo">
+        <div class="conteudo-principal">
+            <h1 class="conteudo-principal-titulo">Calculadora de Aumento Salarial</h1>
+            <p class="conteudo-principal-informe">Informe o cargo do funcionário:</p>
+            <input type="text" id="cargo" placeholder="Cargo">
+            <p class="conteudo-principal-informe">Informe o salário atual R$:</p>
+            <input type="number" id="salario" placeholder="Salário">
+            <button id="verificarBotao">Calcular</button>
+            <p id="resultado"></p>
+        </div>
+
+        <script>
+            document.getElementById('verificarBotao').addEventListener('click', function () {
+                var cargo = document.getElementById('cargo').value.toLowerCase();
+                var salario = parseFloat(document.getElementById('salario').value);
+
+                if (isNaN(salario) || salario < 0 || !cargo) {
+                    alert('Por favor, insira um cargo e um salário válido.');
+                } else {
+                    var aumento = 0;
+                    var novoSalario = 0;
+
+                    switch (cargo) {
+                        case 'gerente':
+                            aumento = salario * 0.05;
+                            break;
+                        case 'supervisor':
+                            aumento = salario * 0.08;
+                            break;
+                        case 'operador':
+                            aumento = salario * 0.09;
+                            break;
+                        default:
+                            aumento = salario * 0.10;
+                            break;
+                    }
+
+                    novoSalario = salario + aumento;
+
+                    document.getElementById('resultado').textContent = `Salário atual: R$ ${salario.toFixed(2)}\nAumento: R$ ${aumento.toFixed(2)}\nNovo salário: R$ ${novoSalario.toFixed(2)}`;
+                }
+            });
+        </script>
+    </main>
+
+    <footer>
+
+    </footer>
+</body>
+
+</html>
