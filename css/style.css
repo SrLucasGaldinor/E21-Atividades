@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala&display=swap');
+
+/* Estilização de todos os Intens */
 * {
     margin: 0;
     padding: 0;
@@ -5,11 +8,14 @@
     font-family: sans-serif;
 }
 
+/* Estilização do Header */
 .cabecalho {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    padding: 20px;
+    padding: 2px;
+    background-color: #efdeff;
+    box-shadow: 0px 5px 8px rgba(74, 74, 74, 0.1);
 }
 
 .cabecalho-menu {
@@ -18,9 +24,16 @@
 }
 
 .cabecalho-menu-item {
-    font-size: 18px;
+    font-family: 'Sarala', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
 }
 
+.cabecalho-imagem {
+    height: 95px;
+}
+
+/* Estilização do Footer */
 .rodape {
     position: absolute;
     bottom: 0;
@@ -36,7 +49,7 @@
 }
 
 .rodape-copy {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Lucida Sans Unicode';
 }
 
 .roda-icons {
@@ -60,6 +73,7 @@
     color: #fff;
 }
 
+/* Estilização da parte do E-Mail */
 #emailConteudo {
     width: 20%;
     padding: 10px;
@@ -69,10 +83,12 @@
 
 .botao-email {
     margin-bottom: 9px;
-    padding: 10px 20px;
+    padding: 8px 8px;
     font-size: 18px;
+    border-radius: 10px;
 }
 
+/* Responsividade da Página */
 @media screen and (max-width: 450px) {
     .cabecalho {
         flex-direction: column;
@@ -84,7 +100,7 @@
         flex-direction: column;
         gap: 10px;
     }
-    
+
     .menu-direita {
         align-self: flex-end;
     }
@@ -114,7 +130,58 @@
         order: 1;
     }
 
-    #emailConteudo, .botao-email, .rodape-conteudo-escrito {
+    #emailConteudo,
+    .botao-email,
+    .rodape-conteudo-escrito {
         display: none;
     }
+}
+
+@media screen and (max-width: 999px) {}
+
+/* Estilização das páginas de 2 à 4 */
+body {
+    background-color: #ffffff;
+}
+
+.conteudo {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+.conteudo-principal {
+    text-align: center;
+}
+
+.conteudo-principal-titulo {
+    font-family: 'Righteous', cursive;
+    font-weight: 400;
+    font-size: 45px;
+    color: #765a90;
+    padding: 20px;
+}
+
+.conteudo-principal-informe {
+    padding: 10px;
+    font-family: 'Sarala', sans-serif;
+    font-size: 20px;
+    color: #765a90;
+    font-weight: 450;
+}
+
+input {
+    border: 1px solid #ccc;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+#verificarBotao {
+    margin-bottom: 9px;
+    padding: 4.2px 4.2px;
+    font-size: 15px;
+    border-radius: 10px;
 }

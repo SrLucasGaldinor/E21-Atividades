@@ -2,8 +2,8 @@ document.write("<footer class='rodape'>");
 document.write("<div class='rodape-conteudo'>");
 document.write("<span class='rodape-copy'>Desenvolvido &copy; 2023 - Lucas Galdino</span><br>");
 document.write("<div class='roda-icons'>")
-document.write("<a href='https://github.com/SrLucasGaldinor' target='_blank'><i class='fab fa-github'></i></a>");
-document.write("<a href='https://contate.me/lucas-galdino-rosa' target='_blank'><i class='fab fa-whatsapp'></i></a><br>");
+document.write("<a href='https://github.com/SrLucasGaldinor' target='_blank' class='rodape-icons'><i class='fab fa-github'></i></a>");
+document.write("<a href='https://contate.me/lucas-galdino-rosa' target='_blank' class='rodape-icons'><i class='fab fa-whatsapp'></i></a><br>");
 document.write("</div>")
 document.write("<span class='rodape-conteudo-escrito'>Receba Atualizações !</span><input type='email' id='emailConteudo' placeholder='Seu E-mail'>");
 document.write("<button id='inscreverBotao' class='botao-email'>Inscrever-se</button>");
