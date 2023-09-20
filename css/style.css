@@ -50,10 +50,16 @@
 
 .rodape-copy {
     font-family: 'Lucida Sans Unicode';
+    margin-bottom: 6.5px;
 }
 
 .roda-icons {
     display: inline-block;
+    margin-bottom: 7px;
+}
+
+.rodape-conteudo-escrito{
+    margin-bottom: 7.1px;
 }
 
 .roda-icons a {
