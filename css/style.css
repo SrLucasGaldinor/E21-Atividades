@@ -27,6 +27,7 @@
     font-family: 'Sarala', sans-serif;
     font-size: 20px;
     font-weight: 600;
+    color: #765a90;
 }
 
 .cabecalho-imagem {
@@ -58,7 +59,7 @@
     margin-bottom: 7px;
 }
 
-.rodape-conteudo-escrito{
+.rodape-conteudo-escrito {
     margin-bottom: 7.1px;
 }
 

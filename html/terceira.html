@@ -15,7 +15,7 @@
     <main class="conteudo">
         <div class="conteudo-principal">
             <h1 class="conteudo-principal-titulo">Calculadora de IMC</h1>
-            <p class="conteudo-principal-informe">Informe seu peso (em kg):</p>
+            <p class="conteudo-principal-informe">Informe seu peso:</p>
             <input type="number" id="peso" placeholder="Peso">
             <p class="conteudo-principal-informe">Informe sua altura:</p>
             <input type="number" id="altura" placeholder="Altura">
@@ -47,7 +47,7 @@
                     } else if (imc >= 35 && imc < 40) {
                         resultado = 'Obesidade II';
                     } else {
-                        resultado = 'Obesidade Grau III (mórbida)';
+                        resultado = 'Obesidade Grau III (Mórbida)';
                     }
 
                     document.getElementById('resultado').textContent = `Seu IMC é ${imc.toFixed(2)} - Classificação: ${resultado}`;
