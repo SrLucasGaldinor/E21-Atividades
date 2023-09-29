@@ -10,7 +10,9 @@
 </head>
 
 <body>
-    <script src="../js/header.js"></script>
+    <header>
+        <script src="../js/header.js"></script>
+    </header>
 
     <main class="conteudo">
         <div class="conteudo-principal">
@@ -22,7 +24,6 @@
             <p class="conteudo-principal-informe">Informe a frequência do aluno:</p>
             <input type="number" id="frequencia" placeholder="Frequência">
             <button id="verificarBotao">Calcular</button>
-            <p id="resultado"></p>
         </div>
 
         <script>
@@ -38,21 +39,20 @@
                     alert('As notas devem estar entre 0 e 10, e a frequência deve estar entre 0 e 100.');
                 } else {
                     var media = (nota1 + nota2 + nota3) / 3;
-                    var situacao = '';
 
                     if (media >= 6 && frequencia >= 75) {
-                        alert('Aprovado');
+                        alert('Parabéns, você foi Aprovado !');
                     } else {
-                        alert('Reprovado');
+                        alert('Infelizmente você foi Reprovado !');
                     }
-
-                    document.getElementById('resultado').textContent = `Média: ${media.toFixed(2)} - Situação: ${situacao}`;
                 }
             });
         </script>
     </main>
 
-    <script src="../js/footer.js"></script>
+    <footer>
+        <script src="../js/footer.js"></script>
+    </footer>
 </body>
 
 </html>

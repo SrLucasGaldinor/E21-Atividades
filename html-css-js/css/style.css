@@ -93,6 +93,9 @@
     padding: 8px 8px;
     font-size: 18px;
     border-radius: 10px;
+    border: 2px solid #aa94bf;
+    background-color: #f4e8ff;
+    color: #745a8d;
 }
 
 /* Responsividade da Página */
@@ -171,7 +174,7 @@ body {
     padding: 20px;
 }
 
-.conteudo-principal-informe {
+.conteudo-principal-informe, #resultado {
     padding: 10px;
     font-family: 'Sarala', sans-serif;
     font-size: 20px;
@@ -184,6 +187,9 @@ input {
     padding: 5px;
     font-size: 15px;
     border-radius: 10px;
+    border: 1px solid #dfcfed;
+    background-color: #ffffffaf;
+    color: #745a8d;
 }
 
 #verificarBotao {
@@ -191,4 +197,7 @@ input {
     padding: 4.2px 4.2px;
     font-size: 15px;
     border-radius: 10px;
+    border: 2px solid #aa94bf;
+    background-color: #f4e8ff;
+    color: #745a8d;
 }

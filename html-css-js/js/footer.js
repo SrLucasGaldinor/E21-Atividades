@@ -6,7 +6,7 @@ document.write("<a href='https://github.com/SrLucasGaldinor' target='_blank' cla
 document.write("<a href='https://contate.me/lucas-galdino-rosa' target='_blank' class='rodape-icons'><i class='fab fa-whatsapp'></i></a><br>");
 document.write("</div>")
 document.write("<span class='rodape-conteudo-escrito'>Receba Atualizações !</span><input type='email' id='emailConteudo' placeholder='Seu E-mail'>");
-document.write("<button id='inscreverBotao' class='botao-email'>Inscrever-se</button>");
+document.write("<button id='inscreverBotao' class='botao-email'>Inscrever</button>");
 document.write("</div>");
 document.write("<script>");
 document.write("document.getElementById('inscreverBotao').addEventListener('click', function () {");

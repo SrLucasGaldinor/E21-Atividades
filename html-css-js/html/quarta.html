@@ -10,7 +10,10 @@
 </head>
 
 <body>
-    <script src="../js/header.js"></script>
+    <header>
+        <script src="../js/header.js"></script>
+    </header>
+
 
     <main class="conteudo">
         <div class="conteudo-principal">
@@ -51,13 +54,15 @@
 
                     novoSalario = salario + aumento;
 
-                    document.getElementById('resultado').textContent = `Salário atual: R$ ${salario.toFixed(2)}\nAumento: R$ ${aumento.toFixed(2)}\nNovo salário: R$ ${novoSalario.toFixed(2)}`;
+                    document.getElementById('resultado').textContent = `Salário atual: R$ ${salario.toFixed(2)} Aumento: R$ ${aumento.toFixed(2)} Novo salário: R$ ${novoSalario.toFixed(2)}`;
                 }
             });
         </script>
     </main>
 
-    <script src="../js/footer.js"></script>
+    <footer>
+        <script src="../js/footer.js"></script>
+    </footer>
 </body>
 
 </html>
