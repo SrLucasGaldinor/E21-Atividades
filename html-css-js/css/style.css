@@ -155,8 +155,6 @@ body {
 }
 
 .conteudo {
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: space-around;
     margin-top: 100px;
@@ -200,4 +198,10 @@ input {
     border: 2px solid #aa94bf;
     background-color: #f4e8ff;
     color: #745a8d;
+}
+
+.conteudo-home {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 300px; 
 }
