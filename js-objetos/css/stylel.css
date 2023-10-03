@@ -1,7 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala&display=swap');
 
 body {
-    font-family: sans-serif;
+    font-family: 'Sarala', sans-serif;
     text-align: center;
+    background-color: #f2ebf8e8;
+    color: #765a90;;
+    margin-top: 5%;
+}
+#fruta {
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 2px solid #dfcfed;
+    background-color: #ffffffaf;
+    color: #745a8d;
+}
+
+button {
+    padding: 8px 8px;
+    font-size: 12.2px;
+    border-radius: 10px;
+    font-weight: 600;
+    border: 2px solid #aa94bf;
+    background-color: #f4e8ff;
+    color: #745a8d;
 }
 
 #frutas {
