@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Contatos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Contatos</h1>
+    <form id="formularioContato">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" required>
+        <button type="button" onclick="adicionarContato()">Adicionar Contato</button>
+    </form>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Telefone</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="listaContatos">
+        </tbody>
+    </table>
+
+    <h2>Editar Contato</h2>
+    <form id="formularioEdicao">
+        <input type="hidden" id="indiceEdicao">
+        <label for="nomeEdicao">Nome:</label>
+        <input type="text" id="nomeEdicao" required>
+        <label for="emailEdicao">Email:</label>
+        <input type="email" id="emailEdicao" required>
+        <label for="telefoneEdicao">Telefone:</label>
+        <input type="tel" id="telefoneEdicao" required>
+        <button type="button" onclick="salvarEdicao()">Salvar Edição</button>
+        <button type="button" onclick="cancelarEdicao()">Cancelar</button>
+    </form>
+
+    <script>
+        let contatos = [];
+        let indiceEdicao = -1;
+
+        function adicionarContato() {
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+
+            if (indiceEdicao === -1) {
+                if (!verificarCamposVazios() && !verificarDuplicados(email, telefone)) {
+                    contatos.push({ nome, email, telefone });
+                } else {
+                    alert("Por favor, preencha todos os campos e verifique se o email ou telefone já existem na lista.");
+                }
+            } else {
+                contatos[indiceEdicao] = { nome, email, telefone };
+                indiceEdicao = -1;
+            }
+
+            atualizarTabela();
+            limparFormulario();
+        }
+
+        function verificarCamposVazios() {
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+
+            return nome === "" || email === "" || telefone === "";
+        }
+
+        function verificarDuplicados(email, telefone) {
+            for (let i = 0; i < contatos.length; i++) {
+                if (contatos[i].email === email || contatos[i].telefone === telefone) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function atualizarTabela() {
+            const corpoTabela = document.getElementById('listaContatos');
+            corpoTabela.innerHTML = '';
+
+            for (let i = 0; i < contatos.length; i++) {
+                const contato = contatos[i];
+
+                const linha = document.createElement('tr');
+                linha.innerHTML = `
+                    <td>${contato.nome}</td>
+                    <td>${contato.email}</td>
+                    <td>${contato.telefone}</td>
+                    <td>
+                        <button type="button" onclick="editarContato(${i})">Editar</button>
+                        <button type="button" onclick="excluirContato(${i})">Excluir</button>
+                    </td>
+                `;
+
+                corpoTabela.appendChild(linha);
+            }
+        }
+
+        function editarContato(indice) {
+            const contato = contatos[indice];
+            document.getElementById('indiceEdicao').value = indice;
+            document.getElementById('nomeEdicao').value = contato.nome;
+            document.getElementById('emailEdicao').value = contato.email;
+            document.getElementById('telefoneEdicao').value = contato.telefone;
+            indiceEdicao = indice;
+            contatos.splice(indice, 1);
+            atualizarTabela();
+        }
+
+        function excluirContato(indice) {
+            contatos.splice(indice, 1);
+            atualizarTabela();
+        }
+
+        function salvarEdicao() {
+            const nomeEditado = document.getElementById('nomeEdicao').value;
+            const emailEditado = document.getElementById('emailEdicao').value;
+            const telefoneEditado = document.getElementById('telefoneEdicao').value;
+
+            if (nomeEditado !== "" && emailEditado !== "" && telefoneEditado !== "") {
+                const indice = document.getElementById('indiceEdicao').value;
+                if (!verificarDuplicados(emailEditado, telefoneEditado)) {
+                    contatos[indice] = { nome: nomeEditado, email: emailEditado, telefone: telefoneEditado };
+                    atualizarTabela();
+                    cancelarEdicao();
+                } else {
+                    alert("Email ou telefone já existente na lista.");
+                }
+            } else {
+                alert("Por favor, preencha todos os campos.");
+            }
+        }
+
+        function cancelarEdicao() {
+            indiceEdicao = -1;
+            limparFormularioEdicao();
+        }
+
+        function limparFormulario() {
+            document.getElementById('nome').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('telefone').value = '';
+        }
+
+        function limparFormularioEdicao() {
+            document.getElementById('indiceEdicao').value = '';
+            document.getElementById('nomeEdicao').value = '';
+            document.getElementById('emailEdicao').value = '';
+            document.getElementById('telefoneEdicao').value = '';
+        }
+
+        atualizarTabela();
+    </script>
+</body>
+</html>
