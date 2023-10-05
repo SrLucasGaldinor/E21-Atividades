@@ -4,29 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Contatos</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        th, td {
-            border: 1px solid #ccc;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f2f2f2;
-        }
-        form {
-            margin-bottom: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="/js-objetos/css/stylell.css">
 </head>
 <body>
-    <h1>Lista de Contatos</h1>
+    <h1 class="conteudo-titulo">Lista de Contatos</h1>
     <form id="formularioContato">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" required>
@@ -34,7 +15,7 @@
         <input type="email" id="email" required>
         <label for="telefone">Telefone:</label>
         <input type="tel" id="telefone" required>
-        <button type="button" onclick="adicionarContato()">Adicionar Contato</button>
+        <button type="button" onclick="adicionarContato()">Adicionar</button>
     </form>
     
     <table>
@@ -43,14 +24,14 @@
                 <th>Nome</th>
                 <th>Email</th>
                 <th>Telefone</th>
-                <th>Ações</th>
+                <th class="conteudo-acao">Ações</th>
             </tr>
         </thead>
         <tbody id="listaContatos">
         </tbody>
     </table>
 
-    <h2>Editar Contato</h2>
+    <h2 class="conteudo-titulo">Editar Contato</h2>
     <form id="formularioEdicao">
         <input type="hidden" id="indiceEdicao">
         <label for="nomeEdicao">Nome:</label>
@@ -59,8 +40,8 @@
         <input type="email" id="emailEdicao" required>
         <label for="telefoneEdicao">Telefone:</label>
         <input type="tel" id="telefoneEdicao" required>
-        <button type="button" onclick="salvarEdicao()">Salvar Edição</button>
-        <button type="button" onclick="cancelarEdicao()">Cancelar</button>
+        <button class="botao-edicao" type="button" onclick="salvarEdicao()">Salvar Edição</button>
+        <button class="botao-edicao" type="button" onclick="cancelarEdicao()">Cancelar</button>
     </form>
 
     <script>

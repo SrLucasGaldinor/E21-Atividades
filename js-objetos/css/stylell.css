@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2ebf89c;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+body {
+    margin-top: 5%;
+    font-family: 'Sarala', sans-serif;
+}
+
+.conteudo-titulo {
+    text-align: center;
+    color: #42166cf3;
+}
+
+input {
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 10px;
+    border: 1px solid #aa94bf;
+    background-color: #ffffffaf;
+    color: #745a8d;
+}
+
+label {
+    color: #42166cf3;
+}
+
+button {
+    padding: 8px 8px;
+    font-size: 12.2px;
+    border-radius: 10px;
+    font-weight: 600;
+    border: 2px solid #aa94bf;
+    background-color: #f4e8ff;
+    color: #42166cf3;
+}
+
+th {
+    background-color: #f4e8ff;
+    border: 1px solid;
+    color: #745a8d;
+    text-align: center;
+}
+
+tbody {
+    background-color: #ffffff;
+    color: #42166cf3;
+}
+
+#formularioContato {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#formularioEdicao {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.botao-edicao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
