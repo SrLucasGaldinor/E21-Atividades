@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.titulo {
+    font-family: 'Sarala', sans-serif;
+    font-size: 50px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.calculadora {
+    width: 320px;
+    background-color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.saida {
+    background-color: #222;
+    padding: 10px;
+    text-align: right;
+    font-size: 24px;
+    color: white;
+}
+
+.botoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    padding: 10px;
+}
+
+button {
+    background-color: #444;
+    border: none;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}

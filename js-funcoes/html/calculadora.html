@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora iOS</title>
+    <link rel="stylesheet" href="/js-funcoes/css/stylel.css">
+</head>
+
+<body>
+    <h1 class="titulo">Calculadora</h1>
+    <div class="calculadora">
+        <div class="saida">
+            <span id="resultado">0</span>
+        </div>
+        <div class="botoes">
+            <button onclick="limparSaida()">C</button>
+            <button onclick="adicionarAoResultado('7')">7</button>
+            <button onclick="adicionarAoResultado('8')">8</button>
+            <button onclick="adicionarAoResultado('9')">9</button>
+            <button onclick="adicionarAoResultado('+')">+</button>
+            <button onclick="adicionarAoResultado('4')">4</button>
+            <button onclick="adicionarAoResultado('5')">5</button>
+            <button onclick="adicionarAoResultado('6')">6</button>
+            <button onclick="adicionarAoResultado('-')">-</button>
+            <button onclick="adicionarAoResultado('1')">1</button>
+            <button onclick="adicionarAoResultado('2')">2</button>
+            <button onclick="adicionarAoResultado('3')">3</button>
+            <button onclick="adicionarAoResultado('*')">*</button>
+            <button onclick="adicionarAoResultado('0')">0</button>
+            <button onclick="adicionarAoResultado('.')">.</button>
+            <button onclick="calcular()">=</button>
+            <button onclick="adicionarAoResultado('/')">/</button>
+        </div>
+    </div>
+    <script src="/js-funcoes/js/calculadora.js"></script>
+</body>
+
+</html>
