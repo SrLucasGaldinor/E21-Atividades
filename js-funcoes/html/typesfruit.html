@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de Frutas</title>
+    <link rel="stylesheet" href="/js-funcoes/css/stylell.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Tipos de Frutas</h1>
+        <label for="fruta">Digite um tipo de fruta:</label>
+        <input type="text" id="fruta" placeholder="Digite uma fruta">
+        <button onclick="adicionarFruta()">Adicionar</button>
+
+        <h2>Visualizar em:</h2>
+        <label for="visualizacao">Escolha uma opção:</label>
+        <select id="visualizacao" onchange="atualizarVisualizacao()">
+            <option value="paragrafo">Parágrafo</option>
+            <option value="lista">Lista</option>
+            <option value="tabela">Tabela</option>
+        </select>
+
+        <div id="resultado"></div>
+    </div>
+    <script src="/js-funcoes/js/typesfruit.js"></script>
+</body>
+
+</html>
