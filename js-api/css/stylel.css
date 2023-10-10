@@ -1,0 +1,16 @@
+#refresh {
+    display: block;
+    margin: 20px auto;
+    background-color: #444;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+#gato {
+    display: block;
+    margin: 20px auto;
+}

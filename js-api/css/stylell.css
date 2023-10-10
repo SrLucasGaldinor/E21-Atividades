@@ -1,0 +1,30 @@
+#container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cat-image {
+    width: 200px;
+    height: auto;
+    margin: 10px;
+}
+
+.conteudo-titulo {
+    display: flex;
+    justify-content: center;
+    font-family: 'Sarala', sans-serif;
+    font-size: 50px;
+    color: #333;
+}
+
+#gatinhos {
+    display: block;
+    margin: 20px auto;
+    background-color: #444;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
