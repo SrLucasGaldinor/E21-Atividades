@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gato API</title>
+</head>
+
+<body>
+    <button id="refresh" onclick="atulizarGato()">Atualizar</button>
+    <img id="gato" src="" alt="Gatinho">
+
+    <script>
+        function atulizarGato() {
+            var refresh = window.document.getElementById('refresh')
+            var gatinho = window.document.getElementById('gato')
+        
+            fetch('https://api.thecatapi.com/v1/images/search')
+            .then((response) => response.json() 
+            .then((data) )
+                
+
+            
+            )
+        }
+    </script>
+</body>
+
+</html>
