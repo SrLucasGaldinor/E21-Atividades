@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício I</title>
+</head>
+
+<body>
+    <footer>
+        <h1>Números em ordem <strong>Crescente</strong> !</h1>
+    </footer>
+
+    <main>
+        <label for="number">Adicione um número a lista: </label>
+        <input type="text" id="number" placeholder="Numero">
+        <button onclick="adicionarNumber()">Adicionar</button>
+        <button onclick="ordenarNumber()">Exibir</button>
+        <div id="campo"></div>
+    </main>
+
+    <script>
+        let arrNumbers = []
+
+        function adicionarNumber() {
+            const inputNumber = document.getElementById('number')
+            const varAux = parseFloat(inputNumber.value)
+            if (!isNaN(varAux)) {
+                arrNumbers.push(varAux)
+                number.value = ''
+            }
+            else {
+                alert('Insira um número válido.')
+            }
+        }
+
+        function ordenarNumber() {
+            let ordenarArr = 0
+            for (let i = 0; i < arrNumbers.length; i++) {
+                for (let j = 0; j < arrNumbers.length - 1; j++) {
+                    if (arrNumbers[j] > arrNumbers[j + 1]) {
+                        ordenarArr = arrNumbers[j]
+                        arrNumbers[j] = arrNumbers[j + 1]
+                        arrNumbers[j + 1] = ordenarArr
+                    }
+                }
+            }
+            exibirNumbers()
+        }
+
+        function exibirNumbers() {
+            const exibirNumbers = document.getElementById('campo')
+            exibirNumbers.textContent = 'Números em ordem crescente: ' + arrNumbers.join(', ')
+        }
+    </script>
+</body>
+
+</html>
