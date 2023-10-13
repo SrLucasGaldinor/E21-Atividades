@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarala&display=swap');
+
+* {
+    font-family: 'Sarala', sans-serif;
+}
+
+.cabecalho-titulo {
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+main {
+    max-width: 598px;
+    margin: 0 auto;
+    padding: 25px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.conteudo {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"] {
+    width: 500px;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#campo {
+    margin-top: 20px;
+}
+
+#replaceNumber, #newNumber {
+    width: 241px;
+}
+
+#botao-encontrar {
+    padding: 2.5px 8px;
+}
