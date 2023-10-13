@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        main {
+            text-align: center;
+            margin: 20px;
+        }
+
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #ccc;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        .add-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            width: 100px;
+            padding: 5px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Lista de Compras</h1>
+    </header>
+    <main>
+        <div class="add-form">
+            <label for="descricao">Descrição do Produto:</label>
+            <input type="text" id="descricao" placeholder="Descrição">
+            <label for="valor">Valor Unitário:</label>
+            <input type="number" id="valor" placeholder="Valor">
+            <label for="quantidade">Quantidade:</label>
+            <input type="number" id="quantidade" placeholder="Quantidade">
+            <button onclick="adicionarItem()">Adicionar Item</button>
+        </div>
+        <table id="tabela">
+            <tr>
+                <th>Descrição</th>
+                <th>Valor Unitário</th>
+                <th>Quantidade</th>
+                <th>Subtotal</th>
+                <th>Ações</th>
+            </tr>
+        </table>
+        <div id="total">
+            Total: R$ 0
+        </div>
+    </main>
+
+    <script>
+        let produtos = [];
+
+        function adicionarItem() {
+            const descricao = document.getElementById('descricao').value;
+            const valor = parseFloat(document.getElementById('valor').value);
+            const quantidade = parseInt(document.getElementById('quantidade').value);
+
+            if (descricao && !isNaN(valor) && !isNaN(quantidade)) {
+                const subtotal = valor * quantidade;
+                const item = { descricao, valor, quantidade, subtotal };
+
+                produtos.push(item);
+                exibirItens();
+                calcularTotal();
+                limparCampos();
+            } else {
+                alert('Preencha todos os campos corretamente.');
+            }
+        }
+
+        function exibirItens() {
+            const tabela = document.getElementById('tabela');
+            tabela.innerHTML = `<tr>
+                                    <th>Descrição</th>
+                                    <th>Valor Unitário</th>
+                                    <th>Quantidade</th>
+                                    <th>Subtotal</th>
+                                    <th>Ações</th>
+                                </tr>`;
+            produtos.forEach((item, index) => {
+                tabela.innerHTML += `<tr>
+                                    <td>${item.descricao}</td>
+                                    <td>R$ ${item.valor.toFixed(2)}</td>
+                                    <td>${item.quantidade}</td>
+                                    <td>R$ ${item.subtotal.toFixed(2)}</td>
+                                    <td><button onclick="editarItem(${index})">Editar</button><button onclick="removerItem(${index})">Remover</button></td>
+                                </tr>`;
+            });
+        }
+
+        function editarItem(index) {
+            const item = produtos[index];
+            document.getElementById('descricao').value = item.descricao;
+            document.getElementById('valor').value = item.valor;
+            document.getElementById('quantidade').value = item.quantidade;
+            produtos.splice(index, 1);
+            exibirItens();
+            calcularTotal();
+        }
+
+        function removerItem(index) {
+            produtos.splice(index, 1);
+            exibirItens();
+            calcularTotal();
+        }
+
+        function calcularTotal() {
+            const total = produtos.reduce((acc, item) => acc + item.subtotal, 0);
+            document.getElementById('total').textContent = `Total: R$ ${total.toFixed(2)}`;
+        }
+
+        function limparCampos() {
+            document.getElementById('descricao').value = '';
+            document.getElementById('valor').value = '';
+            document.getElementById('quantidade').value = '';
+        }
+    </script>
+</body>
+
+</html>
