@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storage</title>
+</head>
+<body>
+    <button onclick="gravarStorage()">Gravar</button>
+    <hr>
+    <button onclick="letStorage()">Ler</button>
+    <button onclick="removerStorage()">Remover</button>
+    <p></p>
+
+    <script>
+        function gravarStorage() {
+            let obj = {
+                nome: 'Maria das Dores',
+                email: 'maria@gmail.com'
+            }
+            localStorage.setItem('nome', JSON.stringify(obj))
+        }
+
+        function letStorage() {
+            let dados = localStorage.getItem('nome')
+            document.getElementsByTagName('p')[0].innerHTML = dados
+
+            let obj = JSON.parse(dados)
+            console.log(obj.nome)
+            console.log(obj.email)
+        }
+
+        function removerStorage() {
+            localStorage.removeItem('nome')
+        }
+    </script>
+</body>
+</html>
