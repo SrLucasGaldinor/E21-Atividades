@@ -1,5 +1,4 @@
 function atulizarGato() {
-    var refresh = window.document.getElementById('refresh')
     var gatinho = window.document.getElementById('gato')
 
     fetch('https://api.thecatapi.com/v1/images/search')
