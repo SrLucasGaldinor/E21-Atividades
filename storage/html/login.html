@@ -24,7 +24,11 @@
         }
 
         function cadastrar() {
-            let users = localStorage.getItem('users')
+            let users = []
+
+            if(localStorage.getItem('users')) {
+                users = JSON.parse(localStorage.getItem('users'))
+            }
 
             let inputUser = document.getElementsByTagName('input')[0]
             let inputPass = document.getElementsByTagName('input')[1]
@@ -34,7 +38,12 @@
                 password: inputPass.value
             }
 
-            localStorage.setItem('users', [obj])
+            users.push(obj)
+
+            localStorage.setItem('users', JSON.stringify(users))
+
+            inputPass.value = ''
+            inputUser.value = ''
 
         }
 
