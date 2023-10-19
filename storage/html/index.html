@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index</title>
 </head>
+
 <body>
-   <a href="/storage/html/cadastro.html">Cadastro</a> 
-   <a href="/storage/html/login.html">Login</a>
+
+    <a href="/storage/html/cadastro.html">Cadastro</a>
+    <a href="/storage/html/login.html">Login</a>
+    <button onclick="validarLogado()">Consulta</button>
+
+    <script>
+        function validarLogado() {
+            if (!localStorage.getItem('userLogado')) {
+                window.location.href = '/storage/html/login.html'
+            }else {
+                window.location.href = '/storage/html/consulta.html'
+            }
+        }
+    </script>
 </body>
+
 </html>
