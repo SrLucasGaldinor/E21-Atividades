@@ -13,15 +13,7 @@
     <a href="/storage/html/login.html">Login</a>
     <button onclick="validarLogado()">Consulta</button>
 
-    <script>
-        function validarLogado() {
-            if (!localStorage.getItem('userLogado')) {
-                window.location.href = '/storage/html/login.html'
-            }else {
-                window.location.href = '/storage/html/consulta.html'
-            }
-        }
-    </script>
+    <script src="/storage/js/scriptl.js"></script>
 </body>
 
 </html>
