@@ -60,11 +60,32 @@ CREATE TABLE tb_produtos_vendidos (
 
 CREATE TABLE tb_produtos_fornecidos (
 	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	valorUnitario FLOAT NOT NULL,
+    tb_fornecedores_id INT NOT NULL,
+    tb_produtos_id INT NOT NULL,
     
+    CONSTRAINT fk_fornecedores_pf
+    FOREIGN KEY (tb_fornecedores_id)
+    REFERENCES tb_fornecedores(id),
+    
+    CONSTRAINT fk_produtos_pf
+    FOREIGN KEY (tb_produtos_id)
+    REFERENCES tb_produtos(id)
 );
 
 CREATE TABLE tb_produtos_comprados (
 	id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    quantidade INT NOT NULL,
+    dataCompras DATE NOT NULL,
+    tb_compras_id INT NOT NULL,
+    tb_produtos_id INT NOT NULL,
     
+    CONSTRAINT fk_compras_pc
+    FOREIGN KEY (tb_compras_id)
+    REFERENCES tb_compras(id),
+    
+    CONSTRAINT fk_produtos_pc
+    FOREIGN KEY (tb_produtos_id)
+    REFERENCES tb_produtos(id)
 );
 
