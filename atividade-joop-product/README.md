@@ -1,0 +1,1 @@
+1 - Criar uma classe produto; Criar uma classe com os métodos para inserir, alterar, excluir, selecionar todos e selecionar um único produto. Os dados do produto devem ser informados pelo usuário.
