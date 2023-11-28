@@ -6,7 +6,6 @@ import utils.ProdutoDAO;
 public class Main {
 
 	public static void main(String[] args) {
-		ProdutoDAO db = new ProdutoDAO();
 		Scanner sc = new Scanner(System.in);
 
 		boolean confirm = true;
@@ -29,14 +28,14 @@ public class Main {
 
 				Product product = new Product(description, price, stock);
 
-				db.salvar(product);
+				ProdutoDAO.salvar(product);
 				break;
 
 			case 2:
 				System.out.println("Informe a posição do Produto que deseja Remover: ");
 				int position = sc.nextInt();
 
-				db.remover(position);
+				ProdutoDAO.remover(position);
 				break;
 
 			case 3:
@@ -54,18 +53,18 @@ public class Main {
 
 				Product newProduct = new Product(newDescription, newPrice, newStock);
 
-				db.alterar(index, newProduct);
+				ProdutoDAO.alterar(index, newProduct);
 				break;
 
 			case 4:
 				System.out.println("Informe a posição do Produto que deseja Selecionar: ");
 				int selection = sc.nextInt();
 
-				db.selecionar(selection);
+				ProdutoDAO.selecionar(selection);
 				break;
 
 			case 5:
-				db.consultar();
+				ProdutoDAO.consultar();
 				break;
 				
 			default:

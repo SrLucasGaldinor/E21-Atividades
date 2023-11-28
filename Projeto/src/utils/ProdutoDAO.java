@@ -9,7 +9,7 @@ import classes.Product;
 
 public class ProdutoDAO {
 
-	public void salvar(Product prod) {
+	public static void salvar(Product prod) {
 		Connection con = Conect.getConexao();
 		String sql = "insert into tb_produto(descricao, price, stock)values(?, ?, ?);";
 		try {
@@ -29,7 +29,7 @@ public class ProdutoDAO {
 		}
 	}
 
-	public void consultar() {
+	public static void consultar() {
 		Connection con = Conect.getConexao();
 		String sql = "select * from tb_produto;";
 		try {
@@ -49,7 +49,7 @@ public class ProdutoDAO {
 		}
 	}
 
-	public void alterar(int index, Product prod) {
+	public static void alterar(int index, Product prod) {
 		Connection con = Conect.getConexao();
 		String sql = "update tb_produto set descricao = ?, price = ?, stock = ? where id = ?;";
 		try {
@@ -70,7 +70,7 @@ public class ProdutoDAO {
 		}
 	}
 
-	public void remover(int position) {
+	public static void remover(int position) {
 		Connection con = Conect.getConexao();
 		String sql = "delete from tb_produto where id = ?;";
 		try {
@@ -88,7 +88,7 @@ public class ProdutoDAO {
 		}
 	}
 
-	public void selecionar(int position) {
+	public static void selecionar(int position) {
 		Connection con = Conect.getConexao();
 		String sql = "select * from tb_produto where id = ?";
 		try {
